@@ -97,6 +97,26 @@ body {
   background: var(--hover-bg);
 }
 
+.sidebar-secret {
+  display: block;
+  width: 20px;
+  padding: 6px 0 10px 12px;
+  margin: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: left;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.sidebar-secret:hover {
+  color: var(--accent);
+}
+
 .menu-group {
   margin-top: 16px;
 }
@@ -170,6 +190,26 @@ body {
 
 .content-section {
   margin-bottom: 16px;
+}
+
+.hidden-section {
+  border: 1px dashed var(--sidebar-border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  background: var(--sidebar-bg);
+}
+
+.hidden-section > .section-heading {
+  font-size: 14px;
+  color: var(--text-secondary);
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.hidden-section[open] > .section-heading {
+  margin-bottom: 4px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--sidebar-border);
 }
 
 .section-heading {
