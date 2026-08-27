@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>업무자동화 교재</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <span class="workspace-icon">📘</span>
+        <span class="workspace-title">업무자동화 교재</span>
+      </div>
+      <nav class="menu" id="menu">
+        <div class="menu-group">
+          <div class="menu-group-title">파워쿼리</div>
+          <button class="menu-item active" data-page="powerquery-overview">
+            <span class="menu-icon">⚙️</span><span>파워쿼리로 할 수 있는 작업</span>
+          </button>
+          <button class="menu-item" data-page="filemerge">
+            <span class="menu-icon">🗂️</span><span>파일취합자동화</span>
+          </button>
+          <button class="menu-item" data-page="mcode-merge">
+            <span class="menu-icon">🧩</span><span>M코드로 여러파일 합치기</span>
+          </button>
+        </div>
+
+        <div class="menu-group">
+          <div class="menu-group-title">엑셀VBA</div>
+          <button class="menu-item" data-page="practice1">
+            <span class="menu-icon">📄</span><span>빈셀채우기</span>
+          </button>
+          <button class="menu-item" data-page="practice2">
+            <span class="menu-icon">📄</span><span>셀 병합하기</span>
+          </button>
+          <button class="menu-item" data-page="practice3">
+            <span class="menu-icon">📄</span><span>특정조건데이터 구분하기</span>
+          </button>
+          <button class="menu-item" data-page="certificate">
+            <span class="menu-icon">📜</span><span>수료증 출력</span>
+          </button>
+        </div>
+
+        <div class="menu-group">
+          <div class="menu-group-title">업무개선워크숍</div>
+          <button class="menu-item" data-page="education">
+            <span class="menu-icon">🎓</span><span>교육 수료자 현황</span>
+          </button>
+        </div>
+      </nav>
+
+      <a class="sidebar-download" href="실습자료.zip" download>
+        <span class="menu-icon">⬇️</span><span>실습자료 다운로드</span>
+      </a>
+    </aside>
+
+    <main class="content" id="content">
+      <!-- 페이지 콘텐츠가 JS로 여기 렌더링됩니다 -->
+    </main>
+  </div>
+
+  <div class="modal-overlay" id="promptModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <span class="modal-title" id="modalTitle"></span>
+        <button class="modal-close" id="modalClose" type="button" aria-label="닫기">✕</button>
+      </div>
+      <pre class="modal-text" id="modalText"></pre>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
