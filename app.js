@@ -1812,3 +1812,28 @@ document.addEventListener("keydown", (e) => {
 });
 
 renderPage("powerquery-overview");
+
+const sidebarEl = document.getElementById("sidebar");
+const sidebarResizer = document.getElementById("sidebarResizer");
+const SIDEBAR_MIN = 160;
+const SIDEBAR_MAX = 480;
+
+sidebarResizer.addEventListener("mousedown", (e) => {
+  e.preventDefault();
+  sidebarEl.classList.add("resizing");
+
+  function onMouseMove(moveEvent) {
+    const newWidth = moveEvent.clientX - sidebarEl.getBoundingClientRect().left;
+    const clamped = Math.min(SIDEBAR_MAX, Math.max(SIDEBAR_MIN, newWidth));
+    sidebarEl.style.width = clamped + "px";
+  }
+
+  function onMouseUp() {
+    sidebarEl.classList.remove("resizing");
+    document.removeEventListener("mousemove", onMouseMove);
+    document.removeEventListener("mouseup", onMouseUp);
+  }
+
+  document.addEventListener("mousemove", onMouseMove);
+  document.addEventListener("mouseup", onMouseUp);
+});

@@ -28,13 +28,32 @@ body {
 
 /* Sidebar */
 .sidebar {
+  position: relative;
   width: 260px;
+  min-width: 160px;
+  max-width: 480px;
   flex-shrink: 0;
   background: var(--sidebar-bg);
   border-right: 1px solid var(--sidebar-border);
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+}
+
+.sidebar-resizer {
+  position: absolute;
+  top: 0;
+  right: -3px;
+  width: 6px;
+  height: 100%;
+  cursor: col-resize;
+  z-index: 10;
+}
+
+.sidebar-resizer:hover,
+.sidebar.resizing .sidebar-resizer {
+  background: var(--accent);
+  opacity: 0.3;
 }
 
 .sidebar-header {
